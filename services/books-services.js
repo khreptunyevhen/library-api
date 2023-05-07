@@ -6,7 +6,7 @@ export async function getBooks() {
 }
 
 export async function getBookById(bookId) {
-  const book = db?.data?.books[bookId];
+  const book = db?.data?.books[bookId - 1];
 
   return book;
 }
