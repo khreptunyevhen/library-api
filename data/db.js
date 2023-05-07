@@ -7,7 +7,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const file = join(__dirname, "db.json");
 
 const adapter = new JSONFile(file);
-const defaultData = { animals: [], habitats: [], feedingTimes: [] };
+const defaultData = { books: [] };
 export const db = new Low(adapter, defaultData);
 
 await db.read();
