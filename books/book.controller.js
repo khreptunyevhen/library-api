@@ -57,16 +57,21 @@ export const createNewBook = async (req, res) => {
 };
 
 export const deleteBookById = async (req, res) => {
-  const bookId = Number(req.params.id);
+  try {
+    const bookId = Number(req.params.id);
 
-  const newBooksList = await deleteBook(bookId);
+    const newBooksList = await deleteBook(bookId);
 
-  if (!newBooksList) {
-    res.statusCode = 404;
-    res.json({ message: `Not found the book with id ${bookId}.` });
-    return;
+    if (!newBooksList) {
+      res.statusCode = 404;
+      res.json({ message: `Not found the book with id ${bookId}.` });
+      return;
+    }
+
+    res.statusCode = 200;
+    res.json(newBooksList);
+  } catch (err) {
+    res.statusCode = 500;
+    res.send(err);
   }
-
-  res.statusCode = 200;
-  res.json(newBooksList);
 };
