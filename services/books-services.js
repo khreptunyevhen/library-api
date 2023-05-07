@@ -30,7 +30,20 @@ export async function addBook(newBook) {
   return books;
 }
 
-export async function updateBook() {}
+export async function updateBook(bookId, updatedBook) {
+  const { title, author } = updatedBook;
+
+  const book = db?.data?.books[Number(bookId) - 1];
+  const books = db?.data?.books;
+
+  book.title = title;
+  book.author = author;
+
+  // console.log(books);
+
+  db.write();
+  return books;
+}
 
 export async function deleteBook(bookId) {
   const books = db?.data?.books;

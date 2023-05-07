@@ -56,6 +56,16 @@ export const createNewBook = async (req, res) => {
   }
 };
 
+export const updateBookById = async (req, res) => {
+  const bookId = req.params.id;
+  const bookBody = req.body;
+
+  const newBooksList = await updateBook(bookId, bookBody);
+
+  res.statusCode = 200;
+  res.json(newBooksList);
+};
+
 export const deleteBookById = async (req, res) => {
   try {
     const bookId = Number(req.params.id);

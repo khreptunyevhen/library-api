@@ -8,11 +8,15 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/api/books", books);
+// Books
+app.use("api/books", books);
 app.use("api/books/:id", books);
 app.post("api/books", books);
 app.put("api/books/:id", books);
 app.delete("api/books/:id", books);
+
+// Users
+// app.use("/api/user", users);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (err) => {
