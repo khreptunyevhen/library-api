@@ -36,10 +36,8 @@ export async function updateBook(bookId, updatedBook) {
   const book = db?.data?.books[Number(bookId) - 1];
   const books = db?.data?.books;
 
-  book.title = title;
-  book.author = author;
-
-  // console.log(books);
+  book.title = title ? title : book.title;
+  book.author = author ? author : book.author;
 
   db.write();
   return books;

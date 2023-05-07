@@ -57,13 +57,24 @@ export const createNewBook = async (req, res) => {
 };
 
 export const updateBookById = async (req, res) => {
-  const bookId = req.params.id;
-  const bookBody = req.body;
+  try {
+    const bookId = req.params.id;
+    const bookBody = req.body;
 
-  const newBooksList = await updateBook(bookId, bookBody);
+    if (bookBody.title === "" || bookBody.author === "") {
+      res.statusCode = 201;
+      res.json({ message: "The title or author cannot be empty." });
+      return;
+    }
 
-  res.statusCode = 200;
-  res.json(newBooksList);
+    const newBooksList = await updateBook(bookId, bookBody);
+
+    res.statusCode = 200;
+    res.json(newBooksList);
+  } catch (err) {
+    res.statusCode = 500;
+    res.send(err);
+  }
 };
 
 export const deleteBookById = async (req, res) => {
