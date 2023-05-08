@@ -21,6 +21,7 @@ app.use("/api/books/:id", books);
 // Users
 app.use("/api/users", users);
 app.use("/api/users", users);
+app.use("/api/users/:id", users);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (err) => {

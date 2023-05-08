@@ -7,6 +7,13 @@ export const getUsers = () => {
   return users;
 };
 
+export const getUser = (id) => {
+  const users = db?.data?.users;
+  const user = users[id];
+
+  return user;
+};
+
 export const addUser = (userInfo) => {
   const users = db?.data?.users;
   const [password, email] = userInfo;

@@ -1,4 +1,4 @@
-import { getUsers, addUser } from "../services/users-services.js";
+import { getUsers, addUser, getUser } from "../services/users-services.js";
 
 export const getAllUsers = async (req, res) => {
   try {
@@ -11,6 +11,25 @@ export const getAllUsers = async (req, res) => {
 
     res.statusCode = 200;
     res.json(users);
+  } catch (err) {
+    res.statusCode = 500;
+    res.send(err);
+  }
+};
+
+export const getUserById = async (req, res) => {
+  try {
+    const userId = req.params.id;
+
+    const user = getUser(userId);
+
+    if (!user) {
+      res.statusCode = 400;
+      res.json({ message: `Cannot found user with id ${userId}.` });
+    }
+
+    res.statusCode = 200;
+    res.json(user);
   } catch (err) {
     res.statusCode = 500;
     res.send(err);

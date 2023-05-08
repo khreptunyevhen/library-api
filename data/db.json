@@ -73,6 +73,15 @@
       "age": 42,
       "country": "Belize",
       "company": "Russel and Sons"
+    },
+    {
+      "id": "1683584977799",
+      "email": "test2@gmai.com",
+      "password": "1234",
+      "name": "Betty Simonis Sr.",
+      "age": 30,
+      "country": "Saint Vincent and the Grenadines",
+      "company": "Mitchell - Herzog"
     }
   ]
 }
