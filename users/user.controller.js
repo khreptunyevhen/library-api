@@ -1,4 +1,4 @@
-import { getUsers } from "../services/users-services.js";
+import { getUsers, addUser } from "../services/users-services.js";
 
 export const getAllUsers = async (req, res) => {
   try {
@@ -15,4 +15,21 @@ export const getAllUsers = async (req, res) => {
     res.statusCode = 500;
     res.send(err);
   }
+};
+
+export const addNewUser = async (req, res) => {
+  const header = req.headers;
+
+  if (!header["x-password"] || !header["x-email"]) {
+    res.statusCode = 200;
+    res.json({ message: "You must enter a username or password.." });
+    return;
+  }
+
+  const userInfo = [header["x-password"], header["x-email"]];
+
+  const users = await addUser(userInfo);
+
+  res.statusCode = 200;
+  res.json(users);
 };

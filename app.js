@@ -18,6 +18,7 @@ app.delete("/api/books/:id", books);
 
 // Users
 app.use("/api/users", users);
+app.use("/api/users", users);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, (err) => {

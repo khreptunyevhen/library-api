@@ -63,7 +63,16 @@
       "name": "John Walter",
       "age": 39,
       "country": "Canada",
-      "position": "project manager"
+      "company": "Epam"
+    },
+    {
+      "id": "1683511754656",
+      "email": "test3@gmai.com",
+      "password": "1234",
+      "name": "Claudia Kihn",
+      "age": 42,
+      "country": "Belize",
+      "company": "Russel and Sons"
     }
   ]
 }
