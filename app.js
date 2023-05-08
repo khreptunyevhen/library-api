@@ -14,12 +14,8 @@ app.use(express.json());
 // Books
 app.use("/api/books", books);
 app.use("/api/books/:id", books);
-app.use("/api/books", books);
-app.use("/api/books/:id", books);
-app.use("/api/books/:id", books);
 
 // Users
-app.use("/api/users", users);
 app.use("/api/users", users);
 app.use("/api/users/:id", users);
 

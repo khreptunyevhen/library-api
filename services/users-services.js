@@ -33,3 +33,39 @@ export const addUser = (userInfo) => {
   db.write();
   return users;
 };
+
+export const deleteUser = (userId) => {
+  const users = db?.data?.users;
+
+  if (!users[userId]) {
+    console.log(`Cannot found user with id ${userId}`);
+    return;
+  }
+
+  users.splice(userId, 1);
+
+  db.write();
+  return users;
+};
+
+export const updateUser = (userInfo, userId) => {
+  const users = db?.data?.users;
+
+  if (!users[userId]) {
+    console.log(`Cannot found user with id ${userId}.`.red);
+    return;
+  }
+
+  const user = users[userId];
+
+  for (const info in user) {
+    if (userInfo.hasOwnProperty(info)) {
+      user[info] = userInfo[info];
+    }
+  }
+
+  console.log(users);
+
+  db.write();
+  return users;
+};
