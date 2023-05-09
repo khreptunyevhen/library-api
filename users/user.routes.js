@@ -6,10 +6,11 @@ import {
   deleteUserById,
   updateUserById,
 } from "./user.controller.js";
+import { auth } from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.get("/", getAllUsers);
+router.get("/", auth("read"), getAllUsers);
 router.get("/:id", getUserById);
 router.post("/", addNewUser);
 router.delete("/:id", deleteUserById);

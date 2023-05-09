@@ -63,25 +63,62 @@
       "name": "John Walter",
       "age": 39,
       "country": "Canada",
-      "company": "Epam"
+      "company": "Epam",
+      "permission": [
+        "read",
+        "admin"
+      ]
     },
     {
-      "id": "1683588678350",
+      "id": "1683642367773",
       "email": "test4@gmai.com",
       "password": "1234",
-      "name": "Miss Sammy Russel",
-      "age": 42,
-      "country": "Morocco",
-      "company": "West Inc"
+      "name": "Melissa Dooley",
+      "age": 43,
+      "country": "Iceland",
+      "company": "Bayer, Harris and Windler",
+      "permission": [
+        "read",
+        "admin"
+      ]
     },
     {
-      "id": "1683588694843",
-      "email": "test2@gmai.com",
+      "id": "1683642372668",
+      "email": "test1@gmai.com",
       "password": "1234",
-      "name": "Keith Block",
-      "age": 35,
-      "country": "Mauritius",
-      "company": "Goyette LLC"
+      "name": "Kathy McLaughlin",
+      "age": 51,
+      "country": "Gabon",
+      "company": "Beatty - Bergstrom",
+      "permission": [
+        "read",
+        "admin"
+      ]
+    },
+    {
+      "id": "1683642378416",
+      "email": "test3@gmai.com",
+      "password": "1234",
+      "name": "Victoria Bayer",
+      "age": 76,
+      "country": "Namibia",
+      "company": "Franecki - Hoppe",
+      "permission": [
+        "read",
+        "admin"
+      ]
+    },
+    {
+      "id": "1683643077083",
+      "email": "test7@gmai.com",
+      "password": "1234",
+      "name": "Adrienne Bergnaum",
+      "age": 83,
+      "country": "Cook Islands",
+      "company": "Swaniawski - Mann",
+      "permissions": [
+        "admin"
+      ]
     }
   ]
 }

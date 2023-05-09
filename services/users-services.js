@@ -14,7 +14,7 @@ export const getUser = (id) => {
   return user;
 };
 
-export const addUser = (userInfo) => {
+export const addUser = (userInfo, permissions) => {
   const users = db?.data?.users;
   const [password, email] = userInfo;
 
@@ -27,7 +27,7 @@ export const addUser = (userInfo) => {
     return users;
   }
 
-  const user = createUser(userInfo);
+  const user = createUser(userInfo, permissions);
   users.push(user);
 
   db.write();

@@ -56,7 +56,7 @@ export const addNewUser = async (req, res) => {
 
     const userInfo = [header["x-password"], header["x-email"]];
 
-    const users = await addUser(userInfo);
+    const users = await addUser(userInfo, ["admin"]);
 
     res.statusCode = 200;
     res.json(users);
